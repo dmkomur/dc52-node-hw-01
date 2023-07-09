@@ -8,7 +8,7 @@ const updateContacts = (contacts) =>
   fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
 
 async function listContacts() {
-  const data = await fs.readFile(contactsPath);
+  const data = await fs.readFile(contactsPath, "utf8");
   return JSON.parse(data);
 }
 
